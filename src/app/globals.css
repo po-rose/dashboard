@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+body {
+  background-color: rgba(24, 24, 24, 1);
+}
+
+.react-time-picker__wrapper {
+  border: none !important;
+}
+
+.css-b62m3t-container {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/Lato-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Optional: You can also include a bold version if you have it */
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/Lato-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Apply Century Gothic to the entire app */
+html,
+body {
+  font-family: 'Lato', sans-serif;
+}

@@ -60,12 +60,12 @@ export const SIDE_BAR_DATA = [
       {
         icon: Wallet,
         title: 'Billings & Plans',
-        link: '/billing-and-plans',
+        link: '/account/billing-and-plans',
       },
       {
         icon: Settings,
         title: 'Settings',
-        link: '/settings',
+        link: '/account/settings',
       },
       {
         icon: LogOut,

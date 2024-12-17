@@ -56,7 +56,7 @@ const UserDropDown = () => {
             </div>
             {[
               { text: 'Switch Portal', link: '#' },
-              { text: 'Account Settings', link: '/settings' },
+              { text: 'Account Settings', link: '/account/settings' },
             ].map((item, key) => {
               return (
                 <Link

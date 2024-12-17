@@ -2,193 +2,134 @@
 
 import React, { useState } from 'react';
 import SaveChanges from '@/components/Molecules/SaveChanges';
-
-// Custom Select Component
-const Select = ({ options, value, onChange }) => {
-  return (
-    <select
-      style={{
-        width: '200px',
-        padding: '10px',
-        borderRadius: '12px',
-        fontSize: '16px',
-        cursor: 'pointer',
-        backgroundColor: '#333', // Dark background
-        color: 'white', // White text color
-        border: '1px solid #666', // Slight border
-      }}
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-    >
-      {options.map((option) => (
-        <option key={option} value={option}>
-          {option}
-        </option>
-      ))}
-    </select>
-  );
-};
+import CustomSelect from '@/components/Atoms/Inputs/CustomSelect';
+import SectionTitle from './SectionTitle';
+import * as styles from './style.css';
 
 const LiveOverlay = () => {
-  const [styleType, setStyleType] = useState('Style 1');
+  const [selectedStyle, setSelectedStyle] = useState({
+    container: styles.style1,
+    speakerInfo: styles.speakerInfo1,
+    content: styles.content1
+  });
+
+  const handleStyleChange = (option) => {
+    switch (option.value) {
+      case 'style1':
+        setSelectedStyle({
+          container: styles.style1,
+          speakerInfo: styles.speakerInfo1,
+          content: styles.content1
+        });
+        break;
+      case 'style2':
+        setSelectedStyle({
+          container: styles.style2,
+          speakerInfo: styles.speakerInfo2,
+          content: styles.content2
+        });
+        break;
+      case 'style3':
+        setSelectedStyle({
+          container: styles.style3,
+          speakerInfo: styles.speakerInfo3,
+          content: styles.content3
+        });
+        break;
+      case 'style4':
+        setSelectedStyle({
+          container: styles.style4,
+          speakerInfo: styles.speakerInfo4,
+          content: styles.content4
+        });
+        break;
+      default:
+        setSelectedStyle({
+          container: styles.style1,
+          speakerInfo: styles.speakerInfo1,
+          content: styles.content1
+        });
+    }
+  };
 
   return (
-    <div style={{ padding: '20px', color: 'white' }}>
-      <h1 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '20px' }}>
-        Speaker Style Settings
-      </h1>
-
-      {/* Dropdown with 2 styles */}
-      <Select options={['Style 1', 'Style 2']} value={styleType} onChange={setStyleType} />
-
-      {/* Conditional rendering based on the selected style */}
-      {styleType === 'Style 1' && (
-        <div>
-          <h2>With Speaker</h2>
-          <div
-            style={{
-              backgroundColor: 'rgba(0, 0, 255, 1)', // Blue background for Style 1
-              borderRadius: '16px',
-              height: '200px',
-              paddingTop: '30px',
-              marginTop: '15px',
-            }}
-          >
-            <div
-              style={{
-                backgroundColor: 'black',
-                color: 'white',
-                fontWeight: '600',
-                padding: '10px 20px',
-                borderRadius: '10px 10px 0 0',
-                marginLeft: '30px',
-                width: '200px',
-              }}
-            >
-              Speaker Name
-            </div>
-            <p
-              style={{
-                height: '79px',
-                backgroundColor: 'white',
-                color: 'black',
-                margin: '0 30px',
-                borderRadius: '0px 0px 10px 10px',
-                display: 'flex',
-                alignItems: 'center',
-                fontSize: '32px',
-                fontWeight: 500,
-                paddingLeft: '20px',
-              }}
-            >
-              Lorem Ipsum is simply dummy text of the printing...
-            </p>
-          </div>
-
-          <h2 style={{ marginTop: '20px' }}>Without Speaker</h2>
-          <div
-            style={{
-              backgroundColor: 'rgba(0, 0, 255, 1)', // Same blue background
-              borderRadius: '16px',
-              height: '200px',
-              paddingTop: '30px',
-              marginTop: '15px',
-            }}
-          >
-            <p
-              style={{
-                height: '79px',
-                backgroundColor: 'white',
-                color: 'black',
-                margin: '0 30px',
-                borderRadius: '0px 0px 10px 10px',
-                display: 'flex',
-                alignItems: 'center',
-                fontSize: '32px',
-                fontWeight: 500,
-                paddingLeft: '20px',
-              }}
-            >
-              Lorem Ipsum is simply dummy text of the printing...
-            </p>
+    <div className={styles.container}>
+      {/* Style Selection */}
+      <div
+        style={{
+          backgroundColor: 'rgba(33, 33, 33, 1)',
+          padding: '20px',
+          borderRadius: '16px',
+          marginTop: '40px'
+        }}
+      >
+        <p style={{ color: 'white', fontSize: '14px', fontWeight: 400 }}>Style Selection</p>
+        <p
+          style={{
+            color: 'rgba(151, 151, 151, 1)',
+            fontSize: '12px',
+            fontWeight: 400,
+            marginTop: '5px',
+          }}
+        >
+          Choose style for optional live overlay
+        </p>
+        
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            columnGap: '20px',
+          }}
+        >
+          <div style={{ width: '100%' }}>
+            <CustomSelect  
+              padding="0px 0px 0px 0px"
+              options={[
+                { value: 'style1', label: 'Style 1' },
+                { value: 'style2', label: 'Style 2' },
+                { value: 'style3', label: 'Style 3' },
+                { value: 'style4', label: 'Style 4' },
+              ]}
+              defaultOption={{ value: 'style1', label: 'Style 1' }}
+              isSearchable={false}
+              onChange={handleStyleChange}
+            />
           </div>
         </div>
-      )}
+      </div>
 
-      {styleType === 'Style 2' && (
-        <div>
-          <h2>With Speaker</h2>
-          <div
-            style={{
-              backgroundColor: 'rgba(0, 255, 0, 1)', // Green background for Style 2
-              borderRadius: '16px',
-              height: '200px',
-              paddingTop: '30px',
-              marginTop: '15px',
-            }}
-          >
-            <div
-              style={{
-                backgroundColor: 'black',
-                color: 'white',
-                fontWeight: '600',
-                padding: '10px 20px',
-                borderRadius: '10px 10px 0 0',
-                marginLeft: '30px',
-                width: '200px',
-              }}
-            >
-              Speaker Name
-            </div>
-            <p
-              style={{
-                height: '79px',
-                backgroundColor: 'white',
-                color: 'black',
-                margin: '0 30px',
-                borderRadius: '0px 0px 10px 10px',
-                display: 'flex',
-                alignItems: 'center',
-                fontSize: '32px',
-                fontWeight: 500,
-                paddingLeft: '20px',
-              }}
-            >
-              Lorem Ipsum is simply dummy text of the printing...
-            </p>
+      {/* Preview Section */}
+      <SectionTitle text={'Preview'} />
+      <div style={{
+        backgroundColor: 'rgba(33, 33, 33, 1)',
+        padding: '20px',
+        borderRadius: '16px',
+      }}>
+        <p style={{ color: 'white', fontSize: '14px', fontWeight: 400 }}>With Speaker</p>
+        
+        {/* With Speaker */}
+        <div className={selectedStyle.container}>
+          <div className={selectedStyle.speakerInfo}>
+            <p style={{ margin: 0 }}>Andreas Karlsson</p>
+            <p style={{ margin: 0, fontSize: '12px', fontWeight: 'normal' }}>CEO</p>
           </div>
-
-          <h2 style={{ marginTop: '20px' }}>Without Speaker</h2>
-          <div
-            style={{
-              backgroundColor: 'rgba(0, 255, 0, 1)', // Same green background
-              borderRadius: '16px',
-              height: '200px',
-              paddingTop: '30px',
-              marginTop: '15px',
-            }}
-          >
-            <p
-              style={{
-                height: '79px',
-                backgroundColor: 'white',
-                color: 'black',
-                margin: '0 30px',
-                borderRadius: '0px 0px 10px 10px',
-                display: 'flex',
-                alignItems: 'center',
-                fontSize: '32px',
-                fontWeight: 500,
-                paddingLeft: '20px',
-              }}
-            >
-              Lorem Ipsum is simply dummy text of the printing...
-            </p>
+          <div className={selectedStyle.content}>
+            Lorem Ipsum is simply dummy text of the printing...
           </div>
         </div>
-      )}
 
-      <div style={{ marginTop: '40px' }}>
+        {/* Without Speaker */}
+        <p style={{ color: 'white', fontSize: '14px', fontWeight: 400, paddingTop: '20px' }}>Without Speaker</p>
+        <div className={selectedStyle.container}>
+          <div className={selectedStyle.content}>
+            Lorem Ipsum is simply dummy text of the printing...
+          </div>
+        </div>
+      </div>
+
+      {/* Save Changes */}
+      <div style={{ margin: '30px 0px' }}>
         <SaveChanges />
       </div>
     </div>

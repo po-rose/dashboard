@@ -53,3 +53,4 @@ export const rowContainer = style({
   borderBottom: '0.1px solid rgba(255, 255, 255, 0.44)',
   ':hover': {},
 });
+

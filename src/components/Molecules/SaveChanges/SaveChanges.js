@@ -15,7 +15,7 @@ const SaveChanges = ({
           alignItems: 'center',
           justifyContent: 'space-between',
           borderRadius: '16px',
-          height: '68px',
+          height: '80px',
           padding: '0px 20px',
         }}
       >
@@ -36,13 +36,23 @@ const SaveChanges = ({
           style={{
             backgroundColor: 'white',
             color: 'black',
-            height: '32px',
-            borderRadius: '6px',
+            height: '40px',
+            borderRadius: '8px',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            width: '126px',
-            fontSize: '14px',
+            width: '140px',
+            fontSize: '15px',
+            cursor: 'pointer',
+            transition: 'all 0.1s ease-in-out',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = '#181818';
+            e.currentTarget.style.color = 'white';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = 'white';
+            e.currentTarget.style.color = 'black';
           }}
         >
           {buttonText}

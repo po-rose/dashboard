@@ -98,13 +98,13 @@ export const dropdown = style([
     bottom: '100%',
     left: '50%',
     transform: 'translateX(-50%)',
-    width: '80%',
+    width: '40%',
     maxHeight: '250px',
     overflowY: 'auto',
     zIndex: 10,
     backgroundColor: '#2a2a2a',
     border: '1px solid #333',
-    borderRadius: '16px',
+    borderRadius: '8px 0px 0px 8px',
   },
   thinScrollbar,
 ]);
@@ -115,6 +115,7 @@ export const dropdownItem = style({
   color: '#fff',
   cursor: 'pointer',
   borderBottom: 'none',
+  textAlign: 'center',
   ':hover': {
     backgroundColor: 'rgba(24, 24, 24, 1)', 
   },

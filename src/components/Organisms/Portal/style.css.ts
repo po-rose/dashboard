@@ -2,9 +2,9 @@ import { style } from '@vanilla-extract/css';
 
 export const container = style({
   padding: '40px',
-  width: 'calc(100% - 100px)', // Ensures fixed 50px space on each side
-  maxWidth: '1200px', // Limits the container's maximum width
-  margin: '0 auto', // Centers the container
+  width: 'calc(100% - 100px)',
+  maxWidth: '1200px',
+  margin: '0 auto',
 });
 
 export const sectionTitle = style({
@@ -12,4 +12,23 @@ export const sectionTitle = style({
   fontSize: '18px',
   fontWeight: 600,
   margin: '30px 0px 20px 0px',
+});
+
+export const addButton = style({
+  backgroundColor: 'white',
+  color: 'black',
+  marginTop: '14px',
+  height: '53px',
+  borderRadius: '6px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  width: '60px',
+  fontSize: '24px',
+  cursor: 'pointer',
+  transition: 'background-color 0.1s ease',
+  ':hover': {
+    backgroundColor: '#323235',
+    color: 'white',
+  }
 });

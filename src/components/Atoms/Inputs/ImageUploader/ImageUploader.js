@@ -7,19 +7,8 @@ const ImageUploader = ({ label, title }) => {
   return (
     <div className={styles.card}>
       <p className={styles.cardTitle}>{title}</p>
-      <div
-        style={{
-          backgroundColor: 'rgba(43, 43, 43, 1)',
-          borderRadius: '100px',
-          height: '100px',
-          width: '100px',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <ImageUp />
-        {/* <Image src={images.uploader} width={42} height={42} alt='upload' /> */}
+      <div className={styles.iconContainer}>
+        <ImageUp className={styles.icon} />
       </div>
       <p style={{ marginTop: '10px', fontSize: '14px', fontWeight: 400 }}>{label}</p>
     </div>

@@ -4,6 +4,7 @@ import SaveChanges from '@/components/Molecules/SaveChanges';
 import ThemeRadio from '@/components/Atoms/Inputs/ThemeRadio';
 import LogoUpload from '@/components/Atoms/Inputs/LogoUpload';
 import CustomSelect from '@/components/Atoms/Inputs/CustomSelect';
+import * as styles from './style.css.ts';
 
 const FooterSettings = () => {
   return (
@@ -58,9 +59,7 @@ const FooterSettings = () => {
       <div
         style={{
           backgroundColor: 'rgba(33, 33, 33, 1)',
-          paddingTop: '18px',
-          paddingLeft: '18px',
-          paddingRight: '18px',
+          padding: '20px',
           borderRadius: '16px',
           marginTop: '30px',
         }}
@@ -79,26 +78,23 @@ const FooterSettings = () => {
         </p>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <div style={{ width: '140px' }}>
-            <CustomSelect backgroundColor={'#212121'} placeholder={'Facebook'} />
+            <CustomSelect backgroundColor={'#181818'}
+            padding="16px 0px 0px 0px"
+            options={[
+              { value: 'facebook', label: 'Facebook' },
+              { value: 'instagram', label: 'Instagram' },
+              { value: 'twitter', label: 'Twitter/X' },
+              { value: 'linkedin', label: 'LinkedIn' },
+            ]}
+              defaultOption={{ value: 'facebook', label: 'Facebook' }}
+              isSearchable={false}
+            />
           </div>
           <div style={{ flex: '1' }}>
-            <TextInput placeholder={'enter URL'} />
+            <TextInput placeholder={'enter URL'} padding={'0px 10px 0px 10px'} />
           </div>
-          <div
-            style={{
-              backgroundColor: 'white',
-              color: 'black',
-              height: '32px',
-              borderRadius: '6px',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              width: '126px',
-              fontSize: '14px',
-              marginTop: '20px',
-            }}
-          >
-            Add
+          <div className={styles.addButton}>
+            +
           </div>
         </div>
       </div>

@@ -15,6 +15,8 @@ export const tab = style({
   fontSize: '18px',
   fontWeight: 400,
   cursor: 'pointer',
+  // Add this to reserve space for the bold text
+  textShadow: '0 0 1px transparent',
   ':hover': {
     color: 'white',
   },
@@ -22,6 +24,8 @@ export const tab = style({
 
 export const activeTab = style({
   fontSize: '18px',
-  fontWeight: 700,
+  //fontWeight: 700,
   color: 'rgba(255, 255, 255, 1)',
+  // Add this to maintain the same space as inactive tabs
+  textShadow: '0 0 1px transparent',
 });

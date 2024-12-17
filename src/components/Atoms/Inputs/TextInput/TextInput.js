@@ -2,7 +2,7 @@
 import React from 'react';
 import * as styles from './style.css';
 
-const TextInput = ({ label, placeholder, required = false, subtitle }) => {
+const TextInput = ({ label, placeholder, required = false, subtitle, padding }) => {
   return (
     <div className={styles.container}>
       <label className={styles.labelStyle}>
@@ -12,7 +12,10 @@ const TextInput = ({ label, placeholder, required = false, subtitle }) => {
 
       {subtitle && <p className={styles.subtitleStyles}>{subtitle}</p>}
 
-      <div className={styles.inputContainer}>
+      <div 
+        className={styles.inputContainer} 
+        style={{ padding: padding }}
+      >
         <input className={styles.inputField} type='text' placeholder={placeholder} />
       </div>
     </div>

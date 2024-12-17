@@ -14,9 +14,7 @@ const Typography = () => {
       <div
         style={{
           backgroundColor: 'rgba(33, 33, 33, 1)',
-          paddingTop: '18px',
-          paddingLeft: '18px',
-          paddingRight: '18px',
+          padding: '20px',
           borderRadius: '16px',
         }}
       >
@@ -41,10 +39,22 @@ const Typography = () => {
           }}
         >
           <div style={{ width: '100%' }}>
-            <CustomSelect label={'Heading Font(H1, H2, H3)'} />
+            <CustomSelect 
+              label={'Heading Font(H1, H2, H3)'} 
+              padding="10px 10px 10px 0px"
+              options={[
+                { value: 'arial', label: 'Arial' },
+                { value: 'helvetica', label: 'Helvetica' },
+                { value: 'roboto', label: 'Roboto' },
+                { value: 'openSans', label: 'Open Sans' },
+                { value: 'centurygothic', label: 'Century Gothic' }
+              ]}
+              defaultOption={{ value: 'centurygothic', label: 'Century Gothic' }}
+              isSearchable={false}
+            />
             <div
               style={{
-                width: '95%',
+                width: 'calc(100% - 31px)',
                 height: '100px',
                 borderRadius: '12px',
                 background: 'rgba(43, 43, 43, 1)',
@@ -60,10 +70,21 @@ const Typography = () => {
             </div>
           </div>
           <div style={{ width: '100%' }}>
-            <CustomSelect label={'Body Text Font'} />
+            <CustomSelect label={'Body Text Font'}
+            padding="10px 10px 10px 0px"
+            options={[
+              { value: 'arial', label: 'Arial' },
+              { value: 'helvetica', label: 'Helvetica' },
+              { value: 'roboto', label: 'Roboto' },
+              { value: 'openSans', label: 'Open Sans' },
+              { value: 'centurygothic', label: 'Century Gothic' }
+            ]}
+              defaultOption={{ value: 'centurygothic', label: 'Century Gothic' }}
+              isSearchable={false}
+            />
             <div
               style={{
-                width: '95%',
+                width: 'calc(100% - 31px)',
                 height: '100px',
                 borderRadius: '12px',
                 background: 'rgba(43, 43, 43, 1)',

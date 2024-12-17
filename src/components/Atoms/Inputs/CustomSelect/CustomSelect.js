@@ -2,7 +2,7 @@ import Select from 'react-select';
 import * as styles from './style.css';
 import { ChevronDown, Eye } from 'lucide-react';
 
-const CustomSelect = ({ label, required, wrapper = true, placeholder, icon, backgroundColor, options = [], defaultOption, isSearchable = true }) => {
+const CustomSelect = ({ label, required, wrapper = true, placeholder, icon, padding, backgroundColor, options = [], defaultOption, isSearchable = true, onChange }) => {
   const customStyles = {
     control: (provided, state) => ({
       ...provided,
@@ -24,7 +24,7 @@ const CustomSelect = ({ label, required, wrapper = true, placeholder, icon, back
       color: 'rgba(255, 255, 255, 1)',
       fontSize: '16px',
       fontWeight: '400',
-      marginLeft: icon ? '40px' : 0,
+      marginLeft: icon ? '40px' : '10px',
     }),
     dropdownIndicator: (provided, state) => ({
       ...provided,
@@ -41,7 +41,7 @@ const CustomSelect = ({ label, required, wrapper = true, placeholder, icon, back
         color: 'white',
       },
       cursor: 'pointer',
-      padding: '8px 16px',
+      padding: '8px 20px',
     }),
     menu: (provided) => ({
       ...provided,
@@ -53,6 +53,7 @@ const CustomSelect = ({ label, required, wrapper = true, placeholder, icon, back
     singleValue: (provided) => ({
       ...provided,
       color: '#fff',
+      marginLeft: icon ? '40px' : '10px',
     }),
   };
 
@@ -64,7 +65,10 @@ const CustomSelect = ({ label, required, wrapper = true, placeholder, icon, back
             {label}
             {required && <span className={styles.required}>*</span>}
           </label>
-          <div className={styles.inputContainer}>
+          <div 
+            className={styles.inputContainer} 
+            style={{ padding: padding || '10px' }}
+          >
             {icon ? (
               <Eye
                 style={{ position: 'absolute', left: 20, zIndex: 10000 }}
@@ -82,8 +86,7 @@ const CustomSelect = ({ label, required, wrapper = true, placeholder, icon, back
               styles={customStyles}
               defaultValue={defaultOption ? options.find(option => option.value === defaultOption.value) : null}
               isSearchable={isSearchable}
-              // value={options?.find((option) => option?.value === field?.value)}
-              // onChange={(option) => field?.onChange(option?.value)}
+              onChange={onChange}
             />
           </div>
         </div>
@@ -99,8 +102,7 @@ const CustomSelect = ({ label, required, wrapper = true, placeholder, icon, back
             styles={customStyles}
             defaultValue={defaultOption ? options.find(option => option.value === defaultOption) : null}
             isSearchable={isSearchable}
-            // value={options?.find((option) => option?.value === field?.value)}
-            // onChange={(option) => field?.onChange(option?.value)}
+            onChange={onChange}
           />
         </div>
       )}

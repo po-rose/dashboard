@@ -18,17 +18,18 @@ const mockdata = [
 const Radio = ({ icon, label, selected, setSelectedTheme }) => {
   return (
     <div
+      onClick={() => setSelectedTheme(label)}
       style={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        cursor: 'pointer',
       }}
     >
-      <label>{label}</label>
-      <Image src={icon} width={200} height={200} alt='theme' />
+      <label style={{ cursor: 'pointer' }}>{label}</label>
+      <Image src={icon} width={200} height={200} alt='theme' style={{ cursor: 'pointer' }} />
 
       <div
-        onClick={() => setSelectedTheme(label)}
         style={{
           height: '20px',
           width: '20px',
@@ -37,18 +38,15 @@ const Radio = ({ icon, label, selected, setSelectedTheme }) => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          cursor: 'pointer',
         }}
       >
-        {selected && (
-          <div
-            style={{
-              height: '10px',
-              width: '10px',
-              backgroundColor: 'white',
-              borderRadius: '100px',
-            }}
-          ></div>
-        )}
+        <div
+          className={styles.radioIndicator}
+          style={{
+            opacity: selected ? 1 : 0
+          }}
+        />
       </div>
     </div>
   );
@@ -61,7 +59,7 @@ const ThemeRadio = () => {
     <div
       style={{
         backgroundColor: 'rgba(33, 33, 33, 1)',
-        padding: '15px',
+        padding: '20px',
         borderRadius: '16px',
       }}
     >

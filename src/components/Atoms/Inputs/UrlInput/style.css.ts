@@ -21,7 +21,7 @@ export const inputField = style({
   border: 'none',
   outline: 'none',
   fontSize: '14px',
-  width: '100%',
+  width: '25%',
   boxSizing: 'border-box',
   '::placeholder': {
     color: '#555',
@@ -39,8 +39,8 @@ export const flex = style({
 });
 
 export const urlInput = style({
-  backgroundColor: 'black',
-  color: 'rgba(255, 255, 255, 0.66)',
+  backgroundColor: '#121212',
+  color: 'rgba(255, 255, 255, 0.30)',
   height: '100%',
   width: '200px',
   padding: '12px 16px',

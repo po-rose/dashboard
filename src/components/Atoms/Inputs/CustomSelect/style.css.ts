@@ -27,7 +27,6 @@ export const inputContainer = style({
   backgroundColor: 'rgba(33, 33, 33, 1)',
   borderRadius: '16px',
   marginTop: '15px',
-  padding: '10px',
   height: '55px',
   display: 'flex',
   alignItems: 'center',

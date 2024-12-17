@@ -42,8 +42,10 @@ export const inputField = style({
   outline: 'none',
   fontSize: '14px',
   boxSizing: 'border-box',
+  textAlign: 'center',
   '::placeholder': {
     color: '#555',
+    textAlign: 'center',
   },
   ':focus': {
     boxShadow: '0px 0px 4px rgba(255, 255, 255, 0.2)',
@@ -62,12 +64,18 @@ globalStyle('.flatpickr-day', {
 });
 
 globalStyle('.flatpickr-day:hover, .flatpickr-day:focus', {
-  backgroundColor: 'rgba(53, 53, 53, 1)',
-  borderRadius: '50%', 
+  backgroundColor: '#201c1c !important',
+  borderColor: '#fff !important',
 });
 
 globalStyle('.flatpickr-day.selected', {
-  backgroundColor: 'rgba(63, 63, 63, 1)',
+  backgroundColor: '#201c1c !important',
+  borderColor: '#fff !important',
+});
+
+globalStyle('.flatpickr-day.selected:hover', {
+  backgroundColor: '#201c1c !important',
+  borderColor: '#2fff !important',
 });
 
 globalStyle('.flatpickr-months .flatpickr-month', {
@@ -103,5 +111,31 @@ globalStyle('.flatpickr-months .flatpickr-next-month:hover svg ', {
 globalStyle('.flatpickr-months .flatpickr-prev-month:hover svg ', {
   fill: '#fff' ,
   color: '#fff',
+});
+
+// Month dropdown background
+globalStyle('.flatpickr-monthDropdown-months', {
+  backgroundColor: 'rgba(33, 33, 33, 1) !important',
+});
+
+// Month dropdown options
+globalStyle('.flatpickr-monthDropdown-month', {
+  backgroundColor: 'rgba(33, 33, 33, 1) !important',
+  color: '#fff !important',
+});
+
+// Selected month in dropdown
+globalStyle('.flatpickr-monthDropdown-months .selected', {
+  backgroundColor: 'rgba(63, 63, 63, 1) !important',
+});
+
+// Month dropdown when opened
+globalStyle('.flatpickr-monthDropdown-months:focus', {
+  backgroundColor: 'rgba(33, 33, 33, 1) !important',
+});
+
+// Container of the month dropdown
+globalStyle('.flatpickr-current-month', {
+  backgroundColor: 'rgba(33, 33, 33, 1) !important',
 });
 

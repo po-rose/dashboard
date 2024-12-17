@@ -9,7 +9,7 @@ const ImageUploader = ({ data }) => {
       style={{
         backgroundColor: 'rgba(33, 33, 33, 1)',
         borderRadius: '16px',
-        padding: '20px 20px 40px 20px',
+        padding: '20px',
       }}
     >
       <p className={styles.sectionTitle}>{data?.title}</p>
@@ -22,37 +22,13 @@ const ImageUploader = ({ data }) => {
           alignItems: 'center',
           justifyContent: 'center',
           flexDirection: 'column',
+          padding: '20px 20px 40px 20px',
         }}
       >
-        <div
-          style={{
-            width: '100px',
-            height: '100px',
-            borderRadius: '100px',
-            backgroundColor: 'rgba(43, 43, 43, 1)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
+        <div className={styles.iconContainer}>
           {data?.icon}
         </div>
         <p style={{ fontSize: '12px', fontWeight: 400, marginTop: '10px' }}>{data?.label}</p>
-        <div
-          style={{
-            backgroundColor: 'white',
-            color: 'black',
-            width: '96px',
-            height: '34px',
-            borderRadius: '6px',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginTop: '20px',
-          }}
-        >
-          Upload
-        </div>
       </div>
     </div>
   );

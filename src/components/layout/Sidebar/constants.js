@@ -59,7 +59,7 @@ export const SIDE_BAR_DATA = [
     children: [
       {
         icon: Wallet,
-        title: 'Billings & Plans',
+        title: 'Billing & Plans',
         link: '/account/billing-and-plans',
       },
       {

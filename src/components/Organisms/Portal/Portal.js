@@ -2,14 +2,16 @@
 
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import TabNavigation from '@/components/Molecules/TabNavigation/TabNavigation'; // Assuming you have a TabNavigation component
+import TabNavigation from '@/components/Molecules/TabNavigation/TabNavigation';
 import PortalIdentity from './PortalIdentity';
 import Typography from './Typography';
 import FooterSettings from './FooterSettings';
-import * as styles from './style.css'; // Assuming your CSS module
+import * as styles from './style.css';
 
-const App = () => {
-  const [selectedTab, setSelectedTab] = useState('Portal Identity');
+const PORTAL_TABS = ['Portal Identity', 'Typography', 'Footer Settings'];
+
+const Portal = () => {
+  const [selectedTab, setSelectedTab] = useState(PORTAL_TABS[0]);
 
   const renderTabContent = () => {
     switch (selectedTab) {
@@ -26,10 +28,14 @@ const App = () => {
 
   return (
     <div className={styles.container}>
-      <TabNavigation selected={selectedTab} onChange={setSelectedTab} />
+      <TabNavigation 
+        selected={selectedTab} 
+        onChange={setSelectedTab} 
+        tabs={PORTAL_TABS}
+      />
       <AnimatePresence mode='wait'>
         <motion.div
-          key={selectedTab} // Key should change when the tab changes
+          key={selectedTab}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
@@ -38,9 +44,8 @@ const App = () => {
           {renderTabContent()}
         </motion.div>
       </AnimatePresence>
-      {/* <FooterSettings /> */}
     </div>
   );
 };
 
-export default App;
+export default Portal;

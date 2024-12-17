@@ -46,7 +46,8 @@ export const icon = style({
 export const addNewButton = style({
   height: '42px',
   width: '166px',
-  backgroundColor: '#181818',
+  backgroundColor: '#FFFFFF',
+  color: '#000000',
   borderRadius: '8px',
   display: 'flex',
   alignItems: 'center',
@@ -54,6 +55,16 @@ export const addNewButton = style({
   marginLeft: '20px',
   cursor: 'pointer',
   ':hover': {
-    backgroundColor: '#282828', // Darker color on hover
+    backgroundColor: '#181818',
+    color: '#FFFFFF',
+  },
+});
+
+export const plusIcon = style({
+  filter: 'brightness(0)', // Makes the icon black
+  selectors: {
+    [`${addNewButton}:hover &`]: {
+      filter: 'brightness(100)', // Makes the icon white on hover
+    },
   },
 });

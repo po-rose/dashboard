@@ -50,7 +50,7 @@ const FooterSettings = () => {
             <TextInput
               placeholder={'Email Address'}
               subtitle={'Enter email address for portal'}
-              label={'Portal Slogan'}
+              label={'Email Address'}
             />
           </div>
         </div>

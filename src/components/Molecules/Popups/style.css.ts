@@ -93,7 +93,7 @@ export const primaryButton = style([
     color: 'black',
     selectors: {
       '&:hover': {
-        backgroundColor: '#3E3E3E',
+        backgroundColor: '#181818',
         color: 'white',
       },
     },

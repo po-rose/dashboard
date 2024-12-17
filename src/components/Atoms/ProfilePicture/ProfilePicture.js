@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import * as styles from './style.css';
-import { Pencil, Plus } from 'lucide-react';
+import { Pencil, Plus, X } from 'lucide-react';
 import Cropper from 'react-easy-crop';
 
 const ProfilePictureEditor = ({ mode }) => {
@@ -74,7 +74,7 @@ const ProfilePictureEditor = ({ mode }) => {
               setImageSrc(null);
             }}
           >
-            &times;
+            <X size={18} className={styles.icon} />
           </div>
         )}
         <div className={styles.avatar}>

@@ -28,7 +28,7 @@ export const addButton = style({
   cursor: 'pointer',
   transition: 'background-color 0.1s ease',
   ':hover': {
-    backgroundColor: '#323235',
+    backgroundColor: '#181818',
     color: 'white',
   }
 });

@@ -7,6 +7,7 @@ import Image from 'next/image';
 import SearchBar from '../SearchBox';
 import Checkbox from '../Checkbox';
 import { useState } from 'react';
+import { Plus } from 'lucide-react';
 
 const AddNew = ({ setIsOpen }) => {
   return (
@@ -14,8 +15,8 @@ const AddNew = ({ setIsOpen }) => {
       onClick={() => setIsOpen(true)}
       className={styles.addNewButton}
     >
-      <Image src={images.plus} height={13} width={13} alt='plus' />
-      <p style={{ fontSize: '13px', fontWeight: 600, marginLeft: '5px' }}>Add New Speaker</p>
+      <Plus size={13} className={styles.plusIcon} strokeWidth={2.5} />
+      <p style={{ fontSize: '13px', fontWeight: '500', marginLeft: '5px', color: 'inherit' }}>Add New Speaker</p>
     </div>
   );
 };

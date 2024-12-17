@@ -1,37 +1,51 @@
 import { style } from '@vanilla-extract/css';
 
-export const themeCheckbox = style({
-  appearance: 'none',
-  width: '41px',
-  height: '22px',
-  background: 'linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat',
-  backgroundSize: '205%',
-  backgroundPosition: '0',
-  transition: '0.4s',
-  borderRadius: '99em',
+export const switchContainer = style({
   position: 'relative',
-  cursor: 'pointer',
-  fontSize: '16px',
+  display: 'inline-block',
+  width: '44px',
+  height: '24px',
+  cursor: 'pointer'
+});
+
+export const input = style({
+  opacity: 0,
+  width: 0,
+  height: 0
+});
+
+export const slider = style({
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  backgroundColor: '#2A2A2A',
+  transition: '.4s',
+  borderRadius: '34px',
+  border: '2px solid #404040',
+
   selectors: {
+    [`${switchContainer}:hover &`]: {
+      borderColor: '#505050'
+    },
+    [`input:checked + &`]: {
+      backgroundColor: '#404040'
+    },
+    [`input:checked + &::before`]: {
+      transform: 'translateX(20px)',
+      backgroundColor: '#fff'
+    },
     '&::before': {
-      content: '""',
-      width: '12px',
-      height: '12px',
       position: 'absolute',
-      top: '5px',
-      left: '5px',
-      background: 'linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat',
-      backgroundSize: '205%',
-      backgroundPosition: '100%',
-      borderRadius: '50%',
-      transition: '0.4s',
-    },
-    '&:checked': {
-      backgroundPosition: '100%',
-    },
-    '&:checked::before': {
-      left: 'calc(100% - 12px - 5px)',
-      backgroundPosition: '0',
-    },
-  },
+      content: '""',
+      height: '16px',
+      width: '16px',
+      left: '2px',
+      bottom: '2px',
+      backgroundColor: '#808080',
+      transition: '.4s',
+      borderRadius: '50%'
+    }
+  }
 });

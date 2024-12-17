@@ -70,7 +70,7 @@ export const saveButton = style({
   cursor: 'pointer',
   zIndex: 1,
   ':hover': {
-    background: '#3E3E3E',
+    background: '#181818',
     color: 'white',
   },
 });
@@ -79,8 +79,7 @@ export const clearButton = style({
   position: 'absolute',
   top: '10px',
   right: '10px',
-  background: '#1E1E1E',
-  color: 'white',
+  background: 'white',
   borderRadius: '50%',
   width: '20px',
   height: '20px',
@@ -88,11 +87,18 @@ export const clearButton = style({
   justifyContent: 'center',
   alignItems: 'center',
   cursor: 'pointer',
-  fontSize: '14px',
-  lineHeight: '20px',
   zIndex: 1,
+  padding: '4px',
   ':hover': {
-    background: 'white',
-    color: 'black',
+    backgroundColor: '#181818',
+  },
+});
+
+export const icon = style({
+  filter: 'brightness(0)',
+  selectors: {
+    [`${clearButton}:hover &`]: {
+      filter: 'brightness(100)',
+    },
   },
 });

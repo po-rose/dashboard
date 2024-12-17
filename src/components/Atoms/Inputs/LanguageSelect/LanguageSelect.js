@@ -2,7 +2,7 @@ import Select from 'react-select';
 import * as styles from './style.css';
 import { ChevronDown, Eye } from 'lucide-react';
 
-const CustomSelect = ({ label, required, wrapper = true, placeholder, icon, padding, backgroundColor, options = [], defaultOption, isSearchable = true, onChange, customStyles }) => {
+const LanguageSelect = ({ label, required, wrapper = true, placeholder, icon, padding, backgroundColor, options = [], defaultOption, isSearchable = true, onChange, customStyles }) => {
   const defaultCustomStyles = {
     control: (provided, state) => ({
       ...provided,
@@ -112,4 +112,4 @@ const CustomSelect = ({ label, required, wrapper = true, placeholder, icon, padd
     </>
   );
 };
-export default CustomSelect;
+export default LanguageSelect;

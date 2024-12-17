@@ -1,7 +1,7 @@
-export { default } from './CustomSelect';
+export { default } from './LanguageSelect';
 
-const CustomSelect = ({ width, padding, customStyles, ...props }) => {
-  const customSelectStyles = {
+const LanguageSelect = ({ width, padding, customStyles, ...props }) => {
+  const LanguageSelectStyles = {
     control: (provided) => ({
       ...provided,
       // ... existing styles ...

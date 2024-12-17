@@ -1,12 +1,18 @@
 import React from 'react';
-import { themeCheckbox } from './style.css';
+import * as styles from './style.css';
 
-const Switch = () => {
+const ToggleSwitch = ({ onChange, checked }) => {
   return (
-    <div>
-      <input type='checkbox' className={themeCheckbox} />
-    </div>
+    <label className={styles.switchContainer}>
+      <input 
+        type="checkbox" 
+        onChange={onChange}
+        checked={checked}
+        className={styles.input}
+      />
+      <span className={styles.slider}></span>
+    </label>
   );
 };
 
-export default Switch;
+export default ToggleSwitch;

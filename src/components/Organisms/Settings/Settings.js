@@ -106,14 +106,21 @@ const Settings = () => {
             title={'Language'}
             subtitle={'Choose your preferred language'}
             cta={
-              <LanguageSelect
-                options={[
-                  { value: 'english', label: 'English' },
-                  { value: 'svenska', label: 'Svenska' },
-                ]}
-                defaultOption={{ value: 'english', label: 'English' }}
-                isSearchable={false}
-              />
+              <div style={{ 
+                display: 'flex', 
+                alignItems: 'center',
+                height: '40px'
+              }}>
+                <LanguageSelect
+                  padding='20px 0px 0px 0px'
+                  options={[
+                    { value: 'english', label: 'English' },
+                    { value: 'svenska', label: 'Svenska' },
+                  ]}
+                  defaultOption={{ value: 'english', label: 'English' }}
+                  isSearchable={false}
+                />
+              </div>
             }
           />
         </div>
@@ -122,7 +129,7 @@ const Settings = () => {
             title={'Marketing Emails'}
             subtitle={'Receive emails about new features and updates'}
             cta={
-              <div style={{ display: 'flex', justifyContent: 'flex-end', paddingRight: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <ToggleSwitch />
               </div>
             }

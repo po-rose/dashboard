@@ -1,6 +1,6 @@
 // import localFont from 'next/font/local';
 'use client';
-import './globals.css';
+import '../globals.css';
 import Sidebar from '@/components/layout/Sidebar';
 import Navbar from '@/components/layout/Navbar';
 import { SidebarProvider, useSidebar } from '@/context/SidebarContext';

@@ -4,20 +4,14 @@ import { ChartNoAxesGantt, TvMinimalPlay } from 'lucide-react';
 import { Clapperboard } from 'lucide-react';
 import Image from 'next/image';
 import Checkbox from '@/components/Atoms/Checkbox';
+import Link from 'next/link';
 
-const StreamRow = ({ item, onSelect, selectedItems }) => {
-  const handleCheckboxChange = (e) => {
-    onSelect(item.id, e.target.checked);
-  };
-
+const StreamRow = ({ item }) => {
   return (
     <div className={styles.rowContainer}>
       <div style={{ width: '300px', position: 'relative' }}>
         <div style={{ position: 'absolute', top: 1 }}>
-          <Checkbox 
-            onChange={handleCheckboxChange}
-            checked={selectedItems.has(item.id)}
-          />
+          <Checkbox />
         </div>
 
         <div
@@ -53,7 +47,9 @@ const StreamRow = ({ item, onSelect, selectedItems }) => {
             </p>
           </div></div>
         <div className={styles.IconSpan2}>
-          <ChartNoAxesGantt />
+          <Link href='/manage'>
+            <ChartNoAxesGantt/>
+          </Link>          
         </div>
         <div className={styles.IconSpan2}>
           <Clapperboard />

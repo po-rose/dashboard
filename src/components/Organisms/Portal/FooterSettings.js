@@ -1,8 +1,6 @@
 import TextInput from '@/components/Atoms/Inputs/TextInput';
 import SectionTitle from './SectionTitle';
 import SaveChanges from '@/components/Molecules/SaveChanges';
-import ThemeRadio from '@/components/Atoms/Inputs/ThemeRadio';
-import LogoUpload from '@/components/Atoms/Inputs/LogoUpload';
 import CustomSelect from '@/components/Atoms/Inputs/CustomSelect';
 import * as styles from './style.css.ts';
 

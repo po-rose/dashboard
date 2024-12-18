@@ -1,6 +1,4 @@
-import { images } from '@/config';
 import * as styles from './style.css';
-import Image from 'next/image';
 import { ImageUp } from 'lucide-react';
 
 const ImageUploader = ({ label, title }) => {

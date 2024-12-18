@@ -15,7 +15,6 @@ import SecondsInput from "@/components/Atoms/Inputs/SecondsInput";
 import TimePicker from "@/components/Atoms/Inputs/TimePicker";
 import { container } from "./style.css";
 import SaveChanges from "@/components/Molecules/SaveChanges";
-import { icon } from "@/components/layout/Navbar/style.css";
 
 const AdvancedSettings = () => {
   return (

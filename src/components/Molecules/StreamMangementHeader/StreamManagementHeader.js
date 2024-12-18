@@ -1,13 +1,16 @@
 import Checkbox from '@/components/Atoms/Checkbox';
 import * as styles from './style.css';
 
-const StreamManagementHeader = () => {
+const StreamManagementHeader = ({ onSelectAll, isAllSelected }) => {
+  const handleSelectAll = (e) => {
+    onSelectAll(e.target.checked);
+  };
+
   return (
     <div className={styles.headerContainer}>
       <div style={{ width: '300px', display: 'flex', alignItems: 'center' }}>
         <div>
-          {/* <input type='checkbox' /> */}
-          <Checkbox />
+          <Checkbox checked={isAllSelected} onChange={handleSelectAll} />
         </div>
         <div style={{ marginLeft: '10px', fontSize: '16px', marginLeft: '10px' }}>Broadcast</div>
       </div>

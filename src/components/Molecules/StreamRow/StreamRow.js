@@ -5,12 +5,19 @@ import { Clapperboard } from 'lucide-react';
 import Image from 'next/image';
 import Checkbox from '@/components/Atoms/Checkbox';
 
-const StreamRow = ({ item }) => {
+const StreamRow = ({ item, onSelect, selectedItems }) => {
+  const handleCheckboxChange = (e) => {
+    onSelect(item.id, e.target.checked);
+  };
+
   return (
     <div className={styles.rowContainer}>
       <div style={{ width: '300px', position: 'relative' }}>
         <div style={{ position: 'absolute', top: 1 }}>
-          <Checkbox />
+          <Checkbox 
+            onChange={handleCheckboxChange}
+            checked={selectedItems.has(item.id)}
+          />
         </div>
 
         <div

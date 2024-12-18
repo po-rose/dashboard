@@ -59,13 +59,8 @@ export const SIDE_BAR_DATA = [
     children: [
       {
         icon: ChartBarIncreasing,
-        title: 'Plan Details',
-        link: '/account/plan-details',
-      },
-      {
-        icon: Settings,
-        title: 'Settings',
-        link: '/account/settings',
+        title: 'Portal Details',
+        link: '/account/portal-details',
       },
       {
         icon: LogOut,

@@ -26,7 +26,7 @@ export default {
   portal: PUBLIC_URL + 'portal.svg',
   liveOverlay: PUBLIC_URL + 'live-speaker.svg',
 
-  // Billing Plans
+  // Plan Details (old)
   billingPlans: PUBLIC_URL + 'billing-plans.svg',
 
   // Settings

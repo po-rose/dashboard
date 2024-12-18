@@ -1,59 +1,39 @@
-import { cols3, cols4, headerContainer, upgradeButton, buttonIcon, limitsTable, tableHeader, tableCell, additionalInfo, bulletPoint } from './style.css';
-import { Clock4, Eye, Server, ArrowUpCircle } from 'lucide-react';
-import HeadingInfo from '@/components/Atoms/HeadingInfo';
-import ProgressCard from '@/components/Atoms/Cards/ProgressCard';
-import PricingCard from '@/components/Atoms/Cards/PricingCard';
-import SectionTitle from './SectionTitle';
-import ToggleSwitch from '@/components/Atoms/Inputs/ToggleSwitch';
 import { useState } from 'react';
+import { cols3, headerContainer, upgradeButton, limitsTable, tableHeader, tableCell, additionalInfo, bulletPoint } from './style.css';
+import { Clock4, Eye, Server, ExternalLink } from 'lucide-react';
+import ProgressCard from '@/components/Atoms/Cards/ProgressCard';
+import SectionTitle from './SectionTitle';
 
 const UpgradeButton = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div className={upgradeButton}>
-      <p style={{ fontSize: '14px', fontWeight: '500', marginLeft: '5px', color: 'inherit' }}>
+    <div
+      className={upgradeButton}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <p style={{ 
+        fontSize: '14px', 
+        fontWeight: '500', 
+        marginLeft: '5px', 
+        color: 'inherit',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '8px'
+      }}>
         Manage Plan
+        <ExternalLink size={14} color={isHovered ? '#000000' : '#FFFFFF'} />
       </p>
     </div>
   );
 };
 
-const BillingToggle = ({ isAnnual, setIsAnnual }) => {
+const Usage = () => {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-      <span style={{ color: isAnnual ? 'rgba(255, 255, 255, 0.6)' : '#fff' }}>Monthly</span>
-      <ToggleSwitch 
-        checked={isAnnual}
-        onChange={(e) => setIsAnnual(e.target.checked)} 
-      />
-      <div style={{ position: 'relative' }}>
-        <div style={{
-          position: 'absolute',
-          top: '-25px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          backgroundColor: '#EAB308',
-          color: 'black',
-          padding: '3px 5px',
-          borderRadius: '12px',
-          fontSize: '11px',
-          fontWeight: '600',
-          whiteSpace: 'nowrap'
-        }}>
-          Save 20%
-        </div>
-        <span style={{ color: !isAnnual ? 'rgba(255, 255, 255, 0.6)' : '#fff' }}>Annual</span>
-      </div>
-    </div>
-  );
-};
-
-const Plans = () => {
-  const [isAnnual, setIsAnnual] = useState(false);
-
-  return (
-    <div style={{ marginTop: '20px' }}>
+    <div>
       <div className={headerContainer}>
-        <SectionTitle text="Your Current Plan: Enterprise" />
+        <SectionTitle text="Usage Overview" />
         <UpgradeButton />
       </div>
       <div className={cols3}>
@@ -86,25 +66,8 @@ const Plans = () => {
         />
       </div>
 
-      <div style={{ 
-        display: 'flex', 
-        justifyContent: 'space-between', 
-        alignItems: 'center',
-        marginTop: '30px'
-      }}>
-        <SectionTitle text="Compare Plans" />
-        <BillingToggle isAnnual={isAnnual} setIsAnnual={setIsAnnual} />
-      </div>
-      <div style={{ backgroundColor: '#212121', padding: '40px', borderRadius: '16px' }}>
-        <div className={cols4}>
-          {[1, 2, 3, 4].map((planId) => (
-            <PricingCard key={planId} planId={planId} isAnnual={isAnnual} />
-          ))}
-        </div>
-      </div>
-
       <div style={{ marginTop: '40px' }}>
-        <SectionTitle text="Plans Limits" />
+        <SectionTitle text="Plan Limits" />
         <div style={{ backgroundColor: '#212121', padding: '40px', borderRadius: '16px' }}>
           <table className={limitsTable}>
             <thead style={{
@@ -196,4 +159,4 @@ const Plans = () => {
   );
 };
 
-export default Plans; 
+export default Usage; 

@@ -8,7 +8,7 @@ import {
   Paintbrush,
   LayoutPanelTop,
   RectangleHorizontal,
-  Wallet,
+  ChartBarIncreasing,
   Settings,
   LogOut,
 } from 'lucide-react';
@@ -58,9 +58,9 @@ export const SIDE_BAR_DATA = [
     title: 'Account',
     children: [
       {
-        icon: Wallet,
-        title: 'Billing & Plans',
-        link: '/account/billing-and-plans',
+        icon: ChartBarIncreasing,
+        title: 'Plan Details',
+        link: '/account/plan-details',
       },
       {
         icon: Settings,

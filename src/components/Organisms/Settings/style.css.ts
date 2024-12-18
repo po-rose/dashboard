@@ -4,7 +4,7 @@ export const container = style({
   width: 'calc(100% - 100px)',
   maxWidth: '1200px',
   margin: '0 auto',
-  padding: '0px 40px 40px 40px',
+  padding: '20px 40px 40px 40px',
 });
 
 export const sectionTitle = style({

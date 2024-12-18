@@ -7,7 +7,7 @@ export const manageNavbar = style({
   boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
   display: 'flex',
   justifyContent: 'space-between',
-  alignItems: 'end',
+  alignItems: 'flex-end',
   padding: '0px 20px 20px 0px',
 }); 
 

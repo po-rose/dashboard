@@ -28,6 +28,7 @@
     "slate-react": "^0.111.0"
   },
   "devDependencies": {
-    "@vanilla-extract/next-plugin": "^2.4.6"
+    "@vanilla-extract/next-plugin": "^2.4.6",
+    "typescript": "5.7.2"
   }
 }
